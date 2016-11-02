@@ -1,0 +1,41 @@
+MyApp\CrediWireBundle\Entity\Project:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        projectName:
+            type: string
+            length: 255
+        endDate:
+            type: datetime
+            nullable: TRUE
+        startDate:
+            type: datetime
+        totalHours:
+            type: datetime
+            nullable: TRUE
+        owner_id:
+            type: integer
+            nullable: TRUE
+    lifecycleCallbacks: {  }
+    manyToOne:
+        Owner:
+            targetEntity: MyApp\CrediWireBundle\Entity\Owner
+            inversedBy: Project
+            joinColumn:
+                name: owner_id
+                referencedColumnName: id
+                onDelete: CASCADE
+    oneToMany:
+        LogonHistory:
+            targetEntity: MyApp\CrediWireBundle\Entity\LogonHistory
+            mappedBy: Project
+            joinColumn:
+                name: id
+                referencedColumnName: project_id
+                onDelete: CASCADE

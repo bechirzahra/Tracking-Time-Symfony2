@@ -1,0 +1,122 @@
+{%extends "MyAppCrediWireBundle:Default:index.html.twig"%}
+{%block stylesheets %}
+    <style type="text/css">
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-signin {
+            max-width: 300px;
+            padding: 19px 29px 29px;
+            margin: 0 auto 20px;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        }
+        .form-signin .form-signin-heading,
+        .form-signin .checkbox {
+            margin-bottom: 10px;
+        }
+        .form-signin input[type="text"],
+        .form-signin input[type="password"] {
+            font-size: 16px;
+            height: auto;
+            margin-bottom: 15px;
+            padding: 7px 9px;
+        }
+
+    </style>
+{%endblock%}
+{%block container %}
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel panel-heading"><h1>Project  {{ entity.projectName }}</h1></div>
+                <div class="panel-body">
+                    <div class="col-md-6">
+                        <p>You started your project at {{ entity.startDate|date('Y-m-d H:i:s') }}  </p>
+                        <p>Deadline is : {{ entity.endDate|date('Y-m-d H:i:s') }}  </p>
+                        <p >you spent until now  </p>
+                        <p style="color:red;">{{ hours|date(' H:i:s') }}</p>
+
+                                        
+                                             
+
+                                     
+                                   
+                       
+                            
+                        <div class="row">
+                            <div class="col-md-2">
+                                <a href="{{ path('project_edit', { 'id': entity.id }) }}" class="btn btn-info">
+                                    Edit
+                                </a>
+                            </div>
+                                    <div class="col-md-2">
+                               
+                                     {{form_start(delete_form) }}
+                      
+                        {{ form_row(delete_form.submit, { 'attr': {'class': 'btn btn-danger'} },{ 'label': 'Submit' }) }}
+                        {{ form_end(delete_form) }}
+                                    {{ form(delete_form) }}
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6"> 
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <a href="{{ path('logonhistory_edit', { 'id': entity.id }) }}" class="btn btn-warning pull-right" style="margin-top: 3%">
+                                    Logout Project
+                                </a>
+                                <p class="h3">LogonHistory list</p>
+                            
+                            </div>
+                            <div class="panel-body">
+                                <table class="table-striped table-bordered table">
+                                    <thead>
+                                        <tr>
+                                 
+                                            <th>Logonproject</th>
+                                            <th>Logoutproject</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for log in entities %}
+                                            <tr>
+
+                                                <td>{% if log.logonProject %}{{ log.logonProject|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                                <td>{% if log.logoutProject %}{{ log.logoutProject|date('Y-m-d H:i:s') }}{% endif %}</td>
+
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                      
+                                </table>
+                                   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+{% endblock %}

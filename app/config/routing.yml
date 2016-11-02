@@ -1,0 +1,4 @@
+my_app_credi_wire:
+    resource: "@MyAppCrediWireBundle/Resources/config/routing.yml"
+    prefix:   /
+

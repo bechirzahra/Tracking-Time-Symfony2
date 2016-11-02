@@ -1,0 +1,67 @@
+{%extends "MyAppCrediWireBundle:Default:index.html.twig"%}
+{%block stylesheets %}
+<style type="text/css">
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-signin {
+            max-width: 300px;
+            padding: 19px 29px 29px;
+            margin: 0 auto 20px;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        }
+        .form-signin .form-signin-heading,
+        .form-signin .checkbox {
+            margin-bottom: 10px;
+        }
+        .form-signin input[type="text"],
+        .form-signin input[type="password"] {
+            font-size: 16px;
+            height: auto;
+            margin-bottom: 15px;
+            padding: 7px 9px;
+        }
+
+    </style>
+{%endblock%}
+   {%block container %}
+    <div class="container">
+       
+            
+        <form class="form-signin" method ="POST" action="{{path('MyApp_CrediWire_homepage')}}" data-validate="parsley">
+             <div class="panel panel-primary">
+            <div class="panel-heading">
+            <h2 class="form-signin-heading">Please sign in</h2>
+            </div>
+            <div class="panel-body">
+            <input type="text" id="username" class="form-control" name="username" placeholder="Email address" data-trigger="change" data-required="true" >
+            <input type="password" class="form-control" name="password" placeholder="Password" data-trigger="change" data-required="true">
+            <div class="checkbox">
+            <label >
+                <input type="checkbox" name="remember" value="remember-me" > Remember me
+            </label>
+            </div>
+            <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+            <a href="{{path('MyApp_CrediWire_signup')}}" >Sign Up</a>
+            </div>
+            </div>
+        </form>
+        
+    </div> 
+    {% if name is defined%}
+    <div class="alert-info fade in">
+        <strong>{{name}}</strong>
+    </div>
+   
+    {%endif%}
+    {%endblock%}

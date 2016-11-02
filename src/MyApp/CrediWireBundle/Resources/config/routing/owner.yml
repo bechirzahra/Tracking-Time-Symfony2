@@ -1,0 +1,30 @@
+owner:
+    path:     /
+    defaults: { _controller: "MyAppCrediWireBundle:Owner:index" }
+
+owner_show:
+    path:     /{id}/show
+    defaults: { _controller: "MyAppCrediWireBundle:Owner:show" }
+
+owner_new:
+    path:     /new
+    defaults: { _controller: "MyAppCrediWireBundle:Owner:new" }
+
+owner_create:
+    path:     /create
+    defaults: { _controller: "MyAppCrediWireBundle:Owner:create" }
+    requirements: { _method: post }
+
+owner_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MyAppCrediWireBundle:Owner:edit" }
+
+owner_update:
+    path:     /{id}/update
+    defaults: { _controller: "MyAppCrediWireBundle:Owner:update" }
+    requirements: { _method: post|put }
+
+owner_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MyAppCrediWireBundle:Owner:delete" }
+    requirements: { _method: post|delete }

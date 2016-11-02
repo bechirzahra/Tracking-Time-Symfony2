@@ -1,0 +1,33 @@
+{%extends "MyAppCrediWireBundle:Default:index.html.twig"%}
+{%block container %}
+<div class="container" >
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+    <form id="form" class="well" method="POST" action="{{path('MyApp_CrediWire_signup')}}" data-validate="parsley">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+        <h2>Sign Up</h2>
+        </div>
+            <div class="panel-body">
+                <div class="form-group">
+        <label>Username</label>
+        <input type="text" id="username" name="username" class="form-control" data-trigger="change" data-required="true">
+         <label>Repeat Username</label>
+        <input type="text" id="usernameRe" name="usernameRe" class="form-control" data-trigger="change" data-required="true" data-equalto="#username">
+        <label>Password</label>
+        <input type="password" name="password" class="form-control" data-trigger="change" data-required="true">
+        <div class="form-group" style="margin-top: 3%">
+            <button class="btn btn-primary" type="submit" >Create Account</button>
+        
+<a href="{{path('MyApp_CrediWire_homepage')}}" >Back to Home Page</a>
+</div>
+                </div>
+            </div>
+        </div>
+    </form>
+        </div>
+                <div class="col-md-4"></div>
+    </div>
+</div>
+ {%endblock%}

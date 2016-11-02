@@ -1,0 +1,25 @@
+MyApp\CrediWireBundle\Entity\Owner:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        userName:
+            type: string
+            length: 255
+        password:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
+    oneToMany:
+        Project:
+            targetEntity: MyApp\CrediWireBundle\Entity\Project
+            mappedBy: Owner
+            joinColumn:
+                name: id
+                referencedColumnName: owner_id
+                onDelete: CASCADE

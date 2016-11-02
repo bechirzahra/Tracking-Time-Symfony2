@@ -1,0 +1,24 @@
+MyApp\CrediWireBundle\Entity\LogonHistory:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        logonProject:
+            type: datetime
+        logoutProject:
+            type: datetime
+            nullable: TRUE
+    lifecycleCallbacks: {  }
+    manyToOne:
+        Project:
+            targetEntity: MyApp\CrediWireBundle\Entity\Project
+            inversedBy: LogonHistory
+            joinColumn:
+                name: project_id
+                referencedColumnName: id
+                onDelete: CASCADE

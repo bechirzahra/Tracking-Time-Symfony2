@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Sign in &middot; Project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link href="{{asset('bundles/myappcrediwire/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{asset('bundles/myappcrediwire/css/bootstrap-theme.min.css')}}" rel="stylesheet">
+        <link href="{{asset('bundles/myappcrediwire/css/bootstrap-datetimepicker.min.css')}}" rel="stylesheet">
+
+        {%block stylesheets %}
+        {%endblock%}
+    </head>
+
+    <body>
+
+        {%block container %}
+        {%endblock%}
+
+
+        <script src="{{asset('bundles/myappcrediwire/js/jquery.min.js')}}"></script>
+        <script src="{{asset('bundles/myappcrediwire/js/moment.min.js')}}"></script>
+        <script src="{{asset('bundles/myappcrediwire/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('bundles/myappcrediwire/js/bootstrap-datetimepicker.min.js')}}"></script>
+       
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker').datetimepicker({
+                });
+            });
+            function afficherCalendrier(idInputDate)
+            {
+               
+                $('#' + idInputDate).datetimepicker({
+                   
+                });
+            }
+        </script>
+         <script type="text/javascript">
+    afficherCalendrier('myapp_crediwirebundle_project_endDate');
+    afficherCalendrier('myapp_crediwirebundle_project_startDate');
+</script>
+
+        {%block javascripts %}
+        {%endblock%}
+    </body>
+</html>
+

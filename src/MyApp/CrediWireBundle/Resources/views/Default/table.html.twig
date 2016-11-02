@@ -1,0 +1,58 @@
+
+<div class="panel-primary">
+    <div class="panel-heading"><h2>My Projects</h2></div>
+    <div class="panel-body"></div>
+
+<div class="container" style="margin-top: 10px">
+
+    <div id="" class="form-inline" role="grid">
+        <div class="row">
+            <div class="span8">
+            </div>
+            <div class="span4">
+                <div class="dataTables_filter" id="example_filter">
+                    <label>Search: <input type="text" class="form-control"></label>
+                    <a href="{{ path('project_new', { 'id':id }) }}" class="btn btn-primary" >Add Project</a>
+                     <a class="btn btn-danger pull-right" href="{{path('MyApp_CrediWire_logout')}}" style="margin-right: 3%">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table table-striped ">
+        <thead>
+            <tr>              
+                <th>Projectname</th>
+                <th>Startdate</th>
+                <th>Enddate</th>               
+                <th>Actions</th>
+            </tr>
+        </thead>     
+        <tbody>
+            {%for t in projects %}
+            <tr >
+                
+                    <td>{{t.projectName}}</td>
+                    <td>{{t.startDate|date('Y-m-d H:i:s')}}</td>
+                    <td>{{t.endDate|date('Y-m-d H:i:s')}}</td>
+                    
+                    <td>
+                <ul class="list-inline">
+                    
+                    <li>
+                        <a href="{{ path('project_edit', { 'id': t.id }) }}" class="btn btn-primary">edit <span class="glyphicon glyphicon-pencil"></span></a>
+                    </li>
+                    <li>
+                        <a href="{{ path('logonhistory_new', { 'id': t.id }) }}" class="btn btn-success">Logon Project   <span class="glyphicon glyphicon-play"></span></a>
+                    </li>
+                    
+                </ul>
+                    </td>
+            </tr>
+             {%endfor%}
+        </tbody>
+    </table>
+
+</div>
+
+       
+</div>

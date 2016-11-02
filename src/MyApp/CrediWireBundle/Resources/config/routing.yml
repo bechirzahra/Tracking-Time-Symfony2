@@ -1,0 +1,75 @@
+MyApp_CrediWire_homepage:
+    pattern:  /login
+    defaults: { _controller: MyAppCrediWireBundle:Default:index }
+
+MyApp_CrediWire_signup:
+    pattern:  /signup
+    defaults: { _controller: MyAppCrediWireBundle:Default:signup }
+    
+MyApp_CrediWire_logout:
+    pattern:  /logout
+    defaults: { _controller: MyAppCrediWireBundle:Default:logout }
+    
+MyApp_CrediWire_add:
+    pattern:  /project
+    defaults: { _controller: MyAppCrediWireBundle:Project:index }
+
+project_show:
+    path:     /{id}/show
+    defaults: { _controller: "MyAppCrediWireBundle:Project:show" }
+ 
+project_new:
+    path:     /{id}/newp
+    defaults: { _controller: "MyAppCrediWireBundle:Project:new" }
+
+project_create:
+    path:     /create
+    defaults: { _controller: "MyAppCrediWireBundle:Project:create" }
+    requirements: { _method: post }
+
+project_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MyAppCrediWireBundle:Project:edit" }
+
+project_update:
+    path:     /{id}/update
+    defaults: { _controller: "MyAppCrediWireBundle:Project:update" }
+    requirements: { _method: post|put }
+
+project_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MyAppCrediWireBundle:Project:delete" }
+    requirements: { _method: post|delete }
+    
+logonhistory:
+    path:     /logonhistory
+    defaults: { _controller: "MyAppCrediWireBundle:LogonHistory:index" }
+
+logonhistory_show:
+    path:     /{id}/show
+    defaults: { _controller: "MyAppCrediWireBundle:LogonHistory:show" }
+
+logonhistory_new:
+    path:     /{id}/new
+    defaults: { _controller: "MyAppCrediWireBundle:LogonHistory:log" }  
+
+logonhistory_create:
+    path:     /create
+    defaults: { _controller: "MyAppCrediWireBundle:LogonHistory:create" }
+    requirements: { _method: post }
+
+logonhistory_edit:
+    path:     /{id}/editlog
+    defaults: { _controller: "MyAppCrediWireBundle:LogonHistory:out" }
+
+logonhistory_update:
+    path:     /{id}/update
+    defaults: { _controller: "MyAppCrediWireBundle:LogonHistory:update" }
+    requirements: { _method: post|put }
+
+logonhistory_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MyAppCrediWireBundle:LogonHistory:delete" }
+    requirements: { _method: post|delete }
+
+

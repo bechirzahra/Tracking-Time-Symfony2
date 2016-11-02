@@ -1,0 +1,10 @@
+parameters:
+#    my_app_credi_wire.example.class: MyApp\CrediWireBundle\Example
+
+services:
+    app.form.type.project_edit:
+        class: MyApp\CrediWireBundle\Form\ProjectFormType
+        arguments: [MyAppCrediWireBundle\Entity\Project]
+        tags:
+            - { name: form.type, alias: project_edit }
+
